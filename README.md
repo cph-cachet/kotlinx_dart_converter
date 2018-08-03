@@ -1,22 +1,11 @@
 # JsonConverter
 
-A library for Dart developers.
+#### What?
+A package for converting from the Kotlin library `Kotlinx` JSON format (which supports polymorphism), 
+to the Dart library `built_value`.
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+#### Why?
+`Kotlinx` has a different representation of objects than standard JSON, and is incompatible with 
+the most robust serialization library for Dart which also supports polymorphism (`built_value`).
 
-## Usage
-
-A simple usage example:
-
-    import 'package:JsonConverter/JsonConverter.dart';
-
-    main() {
-      var awesome = new Awesome();
-    }
-
-## Features and bugs
-
-Please file feature requests and bugs at the [issue tracker][tracker].
-
-[tracker]: http://example.com/issues/replaceme
+Example can be found under `example/mubs_example.dart`

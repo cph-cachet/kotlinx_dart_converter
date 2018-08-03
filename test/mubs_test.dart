@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import '../example/JsonConverter_example.dart';
+import '../example/mubs_example.dart';
 
 void main() {
   group('A group of tests', () {
