@@ -1,4 +1,4 @@
-import 'package:JsonConverter/converter_export.dart';
+import 'package:kotlinx_dart_converter/kotlinx_dart_converter.dart';
 
 void mubsProtocolExample() {
   Map<String, dynamic> kotlinJson =

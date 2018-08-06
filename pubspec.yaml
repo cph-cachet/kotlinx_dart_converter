@@ -1,8 +1,8 @@
-name: JsonConverter
-description: A starting point for Dart libraries or applications.
-# version: 1.0.0
-# homepage: https://www.example.com
-# author: thomasnilsson <email@example.com>
+name: kotlinx_dart_converter
+description: A json converter for Kotlinx to Dart
+version: 1.0.0
+homepage: http://www.cachet.dk
+author: thomasnilsson <tnni@dtu.dk>
 
 environment:
   sdk: '>=2.0.0-dev.66.0 <2.0.0'
