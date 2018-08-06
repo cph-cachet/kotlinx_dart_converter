@@ -95,13 +95,17 @@ class JsonConverterWithObject {
         /// The CURRENT item is a polymorph object, i.e. ['string', {...}]
         /// and needs to be split
         polymorphicObject = splitArray(item);
+
+        /// Add the polymorphic object to the list of objects
+        newPolymorphicList.add(polymorphicObject);
       } else if (item is String) {
         /// The WHOLE input List is polymorph array object itself,
         /// and has the form: ["className", {...}]
         polymorphicObject = splitArray(polymorphicArray);
+
+        /// Add the polymorphic object to the list of objects
+        newPolymorphicList.add(polymorphicObject);
       }
-      /// Add the polymorphic object to the list of objects
-      newPolymorphicList.add(polymorphicObject);
     });
     return newPolymorphicList;
   }

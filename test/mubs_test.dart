@@ -10,5 +10,12 @@ void main() {
       mubsProtocolToObjectExample();
     });
 
+    test("MUBS array Example", () {
+      List myArray = ["hello", "my", "name", "is",];
+//      print(myArray.length);
+    });
+
+
+
   });
 }
