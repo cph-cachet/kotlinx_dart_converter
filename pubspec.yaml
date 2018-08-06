@@ -1,6 +1,6 @@
 name: kotlinx_dart_converter
 description: A json converter for Kotlinx to Dart
-version: 1.0.0
+version: 1.0.1
 homepage: http://www.cachet.dk
 author: thomasnilsson <tnni@dtu.dk>
 
