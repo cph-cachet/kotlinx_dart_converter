@@ -1,4 +1,4 @@
-# JsonConverter
+# KotlinxDartConverter
 
 #### What?
 A package for converting from the Kotlin library `Kotlinx` JSON format (which supports polymorphism), 

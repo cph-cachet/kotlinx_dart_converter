@@ -65,7 +65,7 @@ void mubsProtocolToObjectExample() {
     ]
   };
 
-  JsonConverterWithObject jsonConverter = new JsonConverterWithObject();
+  KotlinxDartConverterWithObject jsonConverter = new KotlinxDartConverterWithObject();
   Map<String, dynamic> protocol = jsonConverter.convert(kotlinJson);
 
   print(json.encode(protocol));

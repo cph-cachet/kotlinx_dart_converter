@@ -64,9 +64,6 @@ void mubsProtocolExample() {
   ]
 };
 
-//      String s = json.encode(kotlinJson);
-//      print(s);
-
-  JsonConverter jsonConverter = new JsonConverter();
+  KotlinxDartConverter jsonConverter = new KotlinxDartConverter();
   jsonConverter.convert(kotlinJson);
 }
