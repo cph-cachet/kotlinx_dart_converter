@@ -1,8 +1,8 @@
 name: kotlinx_dart_converter
-description: A json converter for Kotlinx to Dart
-version: 1.0.1
-homepage: http://www.cachet.dk
-author: thomasnilsson <tnni@dtu.dk>
+description: A package for converting polymorphic Kotlinx JSON to the JSON format supported by Dart using the `built_value` package.
+version: 1.0.2
+homepage: https://github.com/cph-cachet/kotlinx_dart_converter
+author: CACHET Team <cph.cachet@gmail.com>
 
 environment:
   sdk: '>=2.0.0-dev.66.0 <2.0.0'
