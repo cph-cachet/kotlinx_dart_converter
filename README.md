@@ -11,14 +11,15 @@ the most robust serialization library for Dart which also supports polymorphism 
 
 #### Small Example
 Specifically, `Kotlinx` will represent a polymorph object as:
-```json
+```
 [
   "ClassName", 
   {
     "field1" : "value1", 
     "field2" : "value2",
     ...
-  }]
+  }
+]
 ```
 
 Whereas `built_value` for Dart expects the following format:
