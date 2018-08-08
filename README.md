@@ -8,9 +8,31 @@ to the Dart library `built_value`.
 `Kotlinx` has a different representation of objects than standard JSON, and is incompatible with 
 the most robust serialization library for Dart which also supports polymorphism (`built_value`).
 
-Example can be found under `example/mubs_example.dart`
 
-#### Latest update - Monday, August 6th 2018
+#### Small Example
+Specifically, `Kotlinx` will represent a polymorph object as:
+```json
+[
+  "ClassName", 
+  {
+    "field1" : "value1", 
+    "field2" : "value2",
+    ...
+  }]
+```
+
+Whereas `built_value` for Dart expects the following format:
+
+```
+{
+    "$" : "ClassName",
+    "field1" : "value1", 
+    "field2" : "value2",
+    ...
+}
+```
+
+#### Elaborate Example
 
 Given the MUBS study protocol example:
 ```json
