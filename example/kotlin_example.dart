@@ -1,9 +1,8 @@
 import 'package:kotlinx_dart_converter/kotlinx_dart_converter.dart';
 import 'dart:convert';
 
-void mubsProtocolToObjectExample() {
-  Map<String, dynamic> kotlinJson =
-  {
+void kotlinMubsExample() {
+  Map<String, dynamic> kotlinJson = {
     "ownerId": "9c3aff68-b7f0-491a-9f1a-e2ca88bf01cf",
     "name": "MUBS",
     "masterDevices": [
@@ -43,7 +42,6 @@ void mubsProtocolToObjectExample() {
       ]
     ],
     "triggers": [
-      "dk.cachet.carp.protocols.domain.triggers.TriggerWithId",
       {
         "id": 0,
         "trigger": [
@@ -56,7 +54,6 @@ void mubsProtocolToObjectExample() {
       }
     ],
     "triggeredTasks": [
-      "dk.cachet.carp.protocols.domain.triggers.TriggeredTask",
       {
         "triggerId": 0,
         "taskName": "Start measures",
@@ -65,8 +62,14 @@ void mubsProtocolToObjectExample() {
     ]
   };
 
-  KotlinxDartConverter jsonConverter = new KotlinxDartConverter();
-  Map<String, dynamic> protocol = jsonConverter.convert(kotlinJson);
+  Map<String, String> nonPolymorphicClasses = {
+    "triggers": "dk.cachet.carp.protocols.domain.triggers.TriggerWithId",
+    "triggeredTasks": "dk.cachet.carp.protocols.domain.triggers.TriggeredTask",
+  };
 
-  print(json.encode(protocol));
+  AdvancedKotlinxDartConverter jsonConverter = new AdvancedKotlinxDartConverter();
+  jsonConverter.nonPolymorphicClasses = nonPolymorphicClasses;
+  Map<String, dynamic> result = jsonConverter.convert(kotlinJson);
+  
+  print(json.encode(result));
 }

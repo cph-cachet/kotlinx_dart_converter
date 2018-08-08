@@ -33,9 +33,25 @@ Whereas `built_value` for Dart expects the following format:
 }
 ```
 
-#### Elaborate Example
+#### Usage Example
 
-Given the MUBS study protocol example:
+```dart
+Map<String, String> nonPolymorphicClasses = {
+    "triggers": "dk.cachet.carp.protocols.domain.triggers.TriggerWithId",
+    "triggeredTasks": "dk.cachet.carp.protocols.domain.triggers.TriggeredTask",
+};
+
+AdvancedKotlinxDartConverter jsonConverter = new AdvancedKotlinxDartConverter();
+jsonConverter.nonPolymorphicClasses = nonPolymorphicClasses;
+Map<String, dynamic> result = jsonConverter.convert(kotlinJson);
+
+// Print the resulting JSON string
+print(json.encode(result));
+```
+
+#### Elaborate Example (updated August 8th 2018)
+
+Given the following Study protocol, containing both polymorphic- as well ans non-polymorphic classes:
 ```json
 {
   "ownerId": "9c3aff68-b7f0-491a-9f1a-e2ca88bf01cf",
@@ -43,7 +59,7 @@ Given the MUBS study protocol example:
   "masterDevices": [
     [
       "dk.cachet.carp.protocols.domain.devices.Smartphone",
-      {"isMasterDevice": true, "roleName": "Patient phone"}
+      { "isMasterDevice": true, "roleName": "Patient phone" }
     ]
   ],
   "connectedDevices": [],
@@ -59,7 +75,7 @@ Given the MUBS study protocol example:
             {
               "type": [
                 "dk.cachet.carp.protocols.domain.data.GpsDataType",
-                {"category": "Location"}
+                { "category": "Location" }
               ]
             }
           ],
@@ -68,7 +84,7 @@ Given the MUBS study protocol example:
             {
               "type": [
                 "dk.cachet.carp.protocols.domain.data.StepCountDataType",
-                {"category": "Movement"}
+                { "category": "Movement" }
               ]
             }
           ]
@@ -77,7 +93,6 @@ Given the MUBS study protocol example:
     ]
   ],
   "triggers": [
-    "dk.cachet.carp.protocols.domain.triggers.TriggerWithId",
     {
       "id": 0,
       "trigger": [
@@ -90,7 +105,6 @@ Given the MUBS study protocol example:
     }
   ],
   "triggeredTasks": [
-    "dk.cachet.carp.protocols.domain.triggers.TriggeredTask",
     {
       "triggerId": 0,
       "taskName": "Start measures",

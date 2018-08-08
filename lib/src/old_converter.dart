@@ -1,4 +1,4 @@
-class KotlinxDartConverterWithObject {
+class KotlinxDartConverter {
   /// Starts initial conversion: {kotlinx format} => {dart format}
   Map<String, dynamic> convert(Map<String, dynamic> jsonObject) {
     Map<String, dynamic> studyProtocol = unpackMap(jsonObject);
@@ -6,8 +6,7 @@ class KotlinxDartConverterWithObject {
   }
 
   /// {kotlinx format} => {dart format}
-  Map<String, dynamic> unpackMap(
-      Map<String, dynamic> jsonObject) {
+  Map<String, dynamic> unpackMap(Map<String, dynamic> jsonObject) {
     Map<String, dynamic> newPolymorphicMap = new Map();
 
     jsonObject.forEach((key, value) {

@@ -1,4 +1,4 @@
-class KotlinxDartConverter {
+class KotlinxDartPrinter {
   void convert(Map<String, dynamic> jsonObject) {
     unpack(jsonObject, 0);
   }
