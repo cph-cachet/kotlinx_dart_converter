@@ -1,4 +1,4 @@
-class AdvancedKotlinxDartConverter {
+class KotlinxDartConverter {
   Map<String, String> _nonPolymorphicClasses;
 
   set nonPolymorphicClasses(Map<String, dynamic> classes) => _nonPolymorphicClasses = classes;
@@ -6,9 +6,9 @@ class AdvancedKotlinxDartConverter {
   /// Starts initial conversion
   /// Input format: {Kotlinx format}
   /// Output format: {Dart format}
-  Map<String, dynamic> convert(Map<String, dynamic> jsonObject) {
-    Map<String, dynamic> studyProtocol = unpackMap(jsonObject);
-    return studyProtocol;
+  Map<String, dynamic> convert(String outerClass, Map<String, dynamic> jsonObject) {
+    Map<String, dynamic> objectWithoutNamespace = unpackMap(jsonObject);
+    return constructObjectWithNameSpace(outerClass, objectWithoutNamespace);
   }
 
   /// Input format: {Kotlinx format}

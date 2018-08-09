@@ -3,17 +3,15 @@ import 'dart:convert';
 
 void newExampleToObject() {
   Map<String, dynamic> kotlinJson = {
-    "tasks" : [
+    "tasks": [
       [
         "dk.cachet.carp.protocols.domain.tasks.ParallelTask",
         {
-          "name" : "Start All Measures",
-          "measures" : [
+          "name": "Start All Measures",
+          "measures": [
             [
               "dk.cachet.carp.protocols.domain.tasks.measures.LocationMeasure",
-              {
-                "frequency" : 10000
-              }
+              {"frequency": 10000}
             ]
           ]
         }
@@ -23,7 +21,9 @@ void newExampleToObject() {
 
   KotlinxDartConverter jsonConverter =
       new KotlinxDartConverter();
-  Map<String, dynamic> protocol = jsonConverter.convert(kotlinJson);
+
+  String outerClass = "dk.cachet.carp.protocols.domain.study.Study";
+  Map<String, dynamic> protocol = jsonConverter.convert(outerClass, kotlinJson);
 
   print(json.encode(protocol));
 }

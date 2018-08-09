@@ -67,9 +67,11 @@ void kotlinMubsExample() {
     "triggeredTasks": "dk.cachet.carp.protocols.domain.triggers.TriggeredTask",
   };
 
-  AdvancedKotlinxDartConverter jsonConverter = new AdvancedKotlinxDartConverter();
+  String outerClass = "dk.cachet.carp.protocols.domain.study.Study";
+
+  KotlinxDartConverter jsonConverter = new KotlinxDartConverter();
   jsonConverter.nonPolymorphicClasses = nonPolymorphicClasses;
-  Map<String, dynamic> result = jsonConverter.convert(kotlinJson);
+  Map<String, dynamic> result = jsonConverter.convert(outerClass, kotlinJson);
   
   print(json.encode(result));
 }
