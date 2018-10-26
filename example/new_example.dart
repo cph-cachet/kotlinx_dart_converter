@@ -25,5 +25,8 @@ void newExampleToObject() {
   String outerClass = "dk.cachet.carp.protocols.domain.study.Study";
   Map<String, dynamic> protocol = jsonConverter.convert(outerClass, kotlinJson);
 
-  print(json.encode(protocol));
+//  print(json.encode(protocol));
+
+  var encoder = new JsonEncoder.withIndent("\t");
+  print(encoder.convert(protocol));
 }

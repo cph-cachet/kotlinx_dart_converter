@@ -1,6 +1,7 @@
 import 'package:test/test.dart';
 import '../example/new_example.dart';
-import '../example/kotlin_example.dart';
+import '../example/long_example.dart';
+import '../example/tensor_example.dart';
 
 void main() {
   group('A group of tests', () {
@@ -15,6 +16,10 @@ void main() {
 
     test("True Kotlinx Example", () {
       newExampleToObject();
+    });
+
+    test("Tensor", () {
+      tensorExample();
     });
   });
 }
